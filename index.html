@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Personalizado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Christiane Medrado Gestão e Interiores</h2>
+        
+        <form id="whatsappForm" method="get" onsubmit="return sendToWhatsapp()">
+            <!-- Pergunta 1: E-mail -->
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+            <!-- Pergunta 2: Nome completo -->
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+            <!-- Pergunta 3: Celular/Whatsapp -->
+            <label for="telefone">Celular/Whatsapp:</label>
+            <input type="tel" id="telefone" placeholder="Digite seu WhatsApp" required>
+
+            <!-- Pergunta 4: Como conheceu -->
+            <label for="comoConheceu">Por onde nos conheceu?</label>
+            <select id="comoConheceu" required>
+                <option value="indicação">Indicação</option>
+                <option value="instagram">Instagram</option>
+                <option value="amigo">Sou amigo/conhecido</option>
+                <option value="outro">Outro</option>
+            </select>
+                   
+            <div id="outroField" style="display:none;">     
+                <label for="outro">Por favor, descreva:</label>
+                <input type="text" id="outro" placeholder="Digite aqui" />
+            </div>
+
+
+            <!-- Pergunta 5: Perfil de redes sociais -->
+            <label for="perfilRedes">Perfil do Instagram, Facebook, Twitter e/ou LinkedIn:</label>
+            <input type="text" id="perfilRedes" placeholder="Digite seu perfil de rede social" required>
+
+            <!-- Pergunta 6: O que está planejando -->
+            <label for="planejamento">O que está planejando?</label>
+            <select id="planejamento" required>
+                <option value="reformaApartamento">Reforma de Apartamento</option>
+                <option value="reformaCasa">Reforma de Casa</option>
+                <option value="reformaComercial">Reforma Comercial</option>
+                <option value="construcaoZero">Construção do zero</option>
+                <option value="outro2">Outro</option>
+            </select>
+
+            <div id="outroField2" style="display:none;">
+                <label for="outro2">Por favor, descreva:</label>
+                <input type="text" id="outro2" name="outro2" placeholder="Digite aqui">
+            </div>
+
+            
+            <!-- Pergunta 7: Situação do imóvel -->
+            <label for="situacaoImovel">Qual é a situação do imóvel?</label>
+            <select id="situacaoImovel" required>
+                <option value="terrenoVazio">Terreno vazio</option>
+                <option value="imovelAntigo">Imóvel antigo, a reformar completamente</option>
+                <option value="imovelCru">Imóvel cru / entregue pela construtora</option>
+                <option value="imovelPronto">Já está pronto, tenho posse do imóvel</option>
+            </select>
+
+            <!-- Pergunta 8: Localização -->
+            <label for="localizacao">Localização:</label>
+            <select id="localizacao" required>
+                <option value="feiraSantana">Feira de Santana - BA</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <!-- Campo para digitar a localização "Outro" -->
+            <div id="localizacaoOutroField" style="display:none;">
+                <label for="localizacaoOutro">Por favor, descreva:</label>
+                <input type="text" id="localizacaoOutro" placeholder="Digite aqui">
+            </div>
+
+
+            <!-- Pergunta 9: Endereço -->
+            <label for="endereco">Qual é o endereço do local, nome do condomínio ou empreendimento?</label>
+            <input type="text" id="endereco" placeholder="Digite o endereço" required>
+
+            <!-- Pergunta 10: Previsão de recebimento das chaves -->
+            <label for="previsaoChaves">Caso não tenha as chaves/liberação do imóvel ainda, qual a previsão de recebê-las?</label>
+            <input type="text" id="previsaoChaves" placeholder="Previsão de recebimento" required>
+
+            <!-- Pergunta 11: Metragem do imóvel -->
+            <label for="metragem">Quantos metros aproximadamente tem o imóvel?</label>
+            <input type="number" id="metragem" placeholder="Metragem do imóvel" required>
+
+            <!-- Pergunta 12: Pressa para se mudar -->
+            <label for="pressa">Tem pressa para se mudar? Qual a expectativa de prazo?</label>
+            <input type="text" id="pressa" placeholder="Tempo para mudança" required>
+
+            <!-- Pergunta 13: Método de obra -->
+            <label for="metodoObra">Qual a sua pretensão de obra?</label>
+            <select id="metodoObra" required>
+                <option value="completo">Mudar somente após o projeto e execução</option>
+                <option value="parcial">Pretendo ter o projeto e ir executando aos poucos</option>
+            </select>
+
+            <!-- Pergunta 14: Arquitetura e design -->
+            <label for="arquitetura">Já contratou serviços de arquitetura e design de interiores anteriormente?</label>
+            <select id="arquitetura" required>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+
+            <!-- Pergunta 15: Psicologia aplicada -->
+            <label for="psicologia">O método criado pela Arq. Christiane Medrado é baseado em Psicologia aplicada, já ouviu falar nisso?</label>
+            <select id="psicologia" required>
+                <option value="nao">Não, não faço ideia do que seja</option>
+                <option value="pouco">Muito pouco</option>
+                <option value="sim">Sim, conheço um pouco sobre o assunto</option>
+                <option value="interesse">Sim, esse foi um dos motivos de eu me interessar</option>
+            </select>
+
+            <!-- Pergunta 16: Por que a Christiane é ideal -->
+            <label for="motivacao">Por que acredita que a Christiane é a profissional ideal para te ajudar?</label>
+            <textarea id="motivacao" placeholder="Conte mais sobre o que espera" required></textarea>
+
+            <!-- Pergunta 17: Anexar planta e fotos -->
+            <label for="anexar" style="font-weight: bold; font-size: 1.1em; margin-top: 17px;">Por favor, pedimos que envie o anexo para o e-mail Christiane.medrados@gmail.com</label>
+            
+            <!-- Botão de envio -->
+            <button type="submit" id="submitButton">Enviar pelo WhatsApp</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
